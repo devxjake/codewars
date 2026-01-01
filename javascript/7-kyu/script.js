@@ -23,11 +23,27 @@ function validatePIN(pin) {
   return regex.test(pin);
 }
 
-console.log(validatePIN("1"));
-console.log(validatePIN("12"));
-console.log(validatePIN("12a4"));
-console.log(validatePIN("4567"));
-console.log(validatePIN("-1.234"));
-console.log(validatePIN("45678"));
-console.log(validatePIN("123456"));
-console.log(validatePIN("234567"));
+// ==== 3. Descending Order - https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/javascript ====
+
+/*
+    Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+    Examples:
+    Input: 42145 Output: 54421
+
+    Input: 145263 Output: 654321
+
+    Input: 123456789 Output: 987654321
+*/
+
+function descendingOrder(n) {
+  const sortedString = n
+    .toString()
+    .split("")
+    .sort((a, b) => b - a)
+    .join("");
+
+  return parseInt(sortedString);
+
+  // return parseInt([...String(n)].sort().reverse().join(""), 10)
+}
