@@ -59,3 +59,46 @@ function descendingOrder(n) {
 function isIsogram(str) {
   return new Set(str.toLowerCase()).size === str.length;
 }
+
+// ==== 5. Exes and Ohs - https://www.codewars.com/kata/55908aad6620c066bc00002a/train/javascript ====
+
+/* 
+    Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+*/
+
+function XO(str) {
+  // Method 1
+  //   let o = 0;
+  //   let x = 0;
+
+  //   str
+  //     .toLowerCase()
+  //     .split("")
+  //     .forEach((el) => {
+  //       if (el === "o") {
+  //         o++;
+  //       } else if (el === "x") {
+  //         x++;
+  //       }
+  //     });
+
+  //   return totalO === totalX;
+
+  // Method 2
+  //   return (
+  //     str.toLowerCase().match(/o/g)?.length ===
+  //     str.toLowerCase().match(/x/g)?.length
+  //   );
+
+  // Method 3
+  const o = str.toLowerCase().split("o").length;
+  const x = str.toLowerCase().split("x").length;
+
+  return o === x;
+}
+
+XO("ooxx");
+XO("xooxx");
+XO("ooxXm");
+XO("zpzpzpp");
+XO("zzoo");
